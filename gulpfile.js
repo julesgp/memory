@@ -9,10 +9,11 @@ const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 
 gulp.task('js', () => {
-    browserify('src/app.js')
-        .transform('babelify', {
-            presets: ['es2015','react']
-        })
+    browserify('src/app.js', {debug: true})
+            .transform('babelify', {
+                sourceMaps: true,
+                presets: ['es2015','react']
+            })
         .bundle()
         .on('error',notify.onError({
             message: "Error: <%= error.message %>",
