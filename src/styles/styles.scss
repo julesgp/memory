@@ -1,20 +1,8 @@
-.headerWrapper{
-	display:flex;
-	flex-direction:column;
-	margin:0 auto;
-	align-items:center;
-	justify-content:center;
-	color:red;
-	p{
-		font-size:50px;
-		color:black;
-	}
-}
+@import "partials/normalize";
+@import "partials/header";
+@import "partials/initialPage";
+@import "partials/game";
 
-.buttonsWrapper{
-	display:flex;
-	flex-direction:row;
-	margin:0 auto;
-	align-items:center;
-	justify-content:center;
+body{
+	background-color:lightgray;
 }

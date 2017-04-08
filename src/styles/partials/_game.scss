@@ -1,0 +1,15 @@
+.cardsWrapper{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	width:60%;
+	margin:0 auto;
+}
+
+.card{
+	height:150px;
+	background-color:lightgreen;
+	width:22%;
+	margin-top:20px;
+}
