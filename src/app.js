@@ -13,6 +13,34 @@ class App extends Component {
 			displayHeader: true,
 			displayButtons: true,
 			displayGame: true,
+			game:[
+				["A", "id1"],
+				["A1", "id1"],
+				["B", "id2"],
+				["B1", "id2"],
+				["C", "id3"],
+				["C1", "id3"],
+				["D", "id4"],
+				["D1", "id4"],
+				["E", "id5"],
+				["E1", "id5"],
+				["F", "id6"],
+				["F1", "id6"]
+			],
+			cardContent:{
+				indexOne: false,
+				indexTWo: false,
+				indexThree: false,
+				indexFour: false,
+				indexFive: false,
+				indexSix: false,
+				indexSeven: false,
+				indexEight: false,
+				indexNine: false,
+				indexTen: false,
+				indexEleven: false,
+				indexTwelve: false,
+			},
 			time:"00",
 			minutes:"0",
 			seconds: "00",
@@ -22,6 +50,7 @@ class App extends Component {
 		this.selectedEasy = this.selectedEasy.bind(this);
 		this.selectedModerate = this.selectedModerate.bind(this);
 		this.selectedDifficult = this.selectedDifficult.bind(this);
+		this.displayCard = this.displayCard.bind(this);
 	}
 
 	setTimer(){
@@ -102,6 +131,19 @@ class App extends Component {
 		,1000);
 	}
 
+	displayCard(){
+		this.setState({
+			cardContent:{
+				indexOne:true,
+			},
+		});
+	}
+
+	clickedOne(){
+		console.log("I am being clicked");
+		console.log(this);
+	}
+
     render() {
     	let showHeader = "";
     	if(this.state.displayHeader === true){
@@ -124,7 +166,12 @@ class App extends Component {
     	let showGame= "";
     	if(this.state.displayGame === true){
     		showGame = (
-    			<Game startGame={this.timer}/>
+    			<Game 
+    				startGame={this.timer}
+    				stateCard={this.state.cardContent.indexOne}
+    				displayContent={this.displayCard}
+    				thisGame={this.state.game}
+    			/>
     		)
     	}
         return (
